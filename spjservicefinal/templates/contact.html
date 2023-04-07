@@ -1,0 +1,232 @@
+{% load static %}
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% if name %}
+<center>
+    <h2>Thanks {{ name }}!</h2>
+<p> We received your email and will respond shortly </p>
+</center>
+<br/><br/><br/>
+
+{% else %}
+      <!-- contact section start -->
+      <div class="contact_section layout_padding" style="margin-bottom:41px;">
+         <div class="container">
+
+             <form action="" method="post">
+                 {% csrf_token %}
+            <div class="row">
+               <div class="col-md-6">
+                  <h1 class="contact_text"><span style="color: #f82860; font-family:impact;">CONTACT</span>
+<span style="color: #19c0ff; font-family:impact;">US</span>  {{ name }}</h1>
+                  <div class="mail_sectin">
+                     <input type="text" class="email-bt" placeholder="Name" name="name">
+                     <input type="email" class="email-bt" placeholder="Email" name="email">
+                     <input type="text" class="email-bt" placeholder="Phone Number" name="phone_number">
+                      <input type="text" class="massage-bt" placeholder="Text" name="massage">
+                      <div class="send-bt"><input type="submit" value="SEND" class="send_bt"></input></div>
+                    <!--                      <input type="submit" class="send-bt"><a href="#">SEND</a> >-->
+
+<!--                     <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>-->
+<!--                     <div class="send_bt"><a href="#">SEND</a></div>-->
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="image_9"><img src="{% static 'images/img-9.png' %}"></div>
+               </div>
+            </div>
+                 </form>
+
+         </div>
+      </div>
+</div>
+{% endif %}
+      <!-- contact section end -->
+
+
+
+
+
+<!--  <div class="container mt-5">-->
+
+
+<!--    &lt;!&ndash;Section: Content&ndash;&gt;-->
+<!--    <section class="dark-grey-text mb-5">-->
+
+<!--      <style>-->
+<!--        .map-container-section {-->
+<!--          overflow:hidden;-->
+<!--          padding-bottom:56.25%;-->
+<!--          position:relative;-->
+<!--          height:0;-->
+<!--        }-->
+<!--        .map-container-section iframe {-->
+<!--          left:0;-->
+<!--          top:0;-->
+<!--          height:100%;-->
+<!--          width:100%;-->
+<!--          position:absolute;-->
+<!--        }-->
+<!--      </style>-->
+
+<!--       Section heading -->
+<!--      <h3 class="font-weight-bold text-center mb-4">Reach Us</h3>-->
+<!--      &lt;!&ndash; Section description &ndash;&gt;-->
+<!--&lt;!&ndash;      <p class="text-center w-responsive mx-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.&ndash;&gt;-->
+<!--&lt;!&ndash;        Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam&ndash;&gt;-->
+<!--&lt;!&ndash;        eum porro a pariatur veniam.</p>&ndash;&gt;-->
+
+<!--      &lt;!&ndash; Grid row &ndash;&gt;-->
+<!--      <div class="row">-->
+
+<!--        &lt;!&ndash; Grid column &ndash;&gt;-->
+<!--        <div class="col-lg-5 mb-lg-0 pb-lg-3 mb-4">-->
+
+<!--          &lt;!&ndash; Form with header &ndash;&gt;-->
+<!--          <div class="card">-->
+<!--            <div class="card-body">-->
+<!--              &lt;!&ndash; Header &ndash;&gt;-->
+<!--              <div class="form-header blue accent-1">-->
+<!--                <h3 class="mt-2"><i class="fas fa-envelope"></i> Write to us:</h3>-->
+<!--              </div>-->
+<!--              <p class="dark-grey-text">We'll write rarely, but only the best content.</p>-->
+<!--              &lt;!&ndash; Body &ndash;&gt;-->
+<!--              <div class="md-form">-->
+<!--                <i class="fas fa-user prefix grey-text"></i>-->
+<!--                <input type="text" id="form-name" class="form-control">-->
+<!--                <label for="form-name">Your name</label>-->
+<!--              </div>-->
+<!--              <div class="md-form">-->
+<!--                <i class="fas fa-envelope prefix grey-text"></i>-->
+<!--                <input type="text" id="form-email" class="form-control">-->
+<!--                <label for="form-email">Your email</label>-->
+<!--              </div>-->
+<!--              <div class="md-form">-->
+<!--                <i class="fas fa-tag prefix grey-text"></i>-->
+<!--                <input type="text" id="form-Subject" class="form-control">-->
+<!--                <label for="form-Subject">Subject</label>-->
+<!--              </div>-->
+<!--              <div class="md-form">-->
+<!--                <i class="fas fa-pencil-alt prefix grey-text"></i>-->
+<!--                <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>-->
+<!--                <label for="form-text">Send message</label>-->
+<!--              </div>-->
+<!--              <div class="text-center">-->
+<!--                <button class="btn btn-light-blue">Submit</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          &lt;!&ndash; Form with header &ndash;&gt;-->
+
+<!--        </div>-->
+<!--        &lt;!&ndash; Grid column &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Grid column &ndash;&gt;-->
+<!--        <div class="col-lg-7">-->
+
+<!--          &lt;!&ndash;Google map&ndash;&gt;-->
+<!--          <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">-->
+<!--              <div style="width: 100%">-->
+<!--                  <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=SPJ%20Group,%20CSK%20Arcade,%20Paika,%20Nera%20CSK%20Jewellery+(SPJ%20GROUP)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure acres/hectares on map</a></iframe></div>-->
+<!--          </div>-->
+<!--          &lt;!&ndash; Buttons&ndash;&gt;-->
+<!--          <div class="row text-center">-->
+<!--            <div class="col-md-4">-->
+<!--              <a class="btn-floating blue accent-1">-->
+<!--                  <i class="fas fa-phone"></i>-->
+<!--                <i class="fas fa-map-marker-alt"></i>-->
+<!--              </a>-->
+<!--              <p>SPJ Group, CSK Arcade</p>-->
+<!--              <p class="mb-md-0">Paika</p>-->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--              <a class="btn-floating blue accent-1">-->
+<!--                <i class="fas fa-phone"></i>-->
+<!--              </a>-->
+<!--              <p>+91 9778777025</p>-->
+<!--              <p class="mb-md-0">Mon - Sat, 9:30-5:30</p>-->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--              <a class="btn-floating blue accent-1">-->
+<!--                <i class="fas fa-envelope"></i>-->
+<!--              </a>-->
+<!--              <p>spjgroupktm@gmail.com</p>-->
+<!--              <p class="mb-0"></p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--        &lt;!&ndash; Grid column &ndash;&gt;-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Grid row &ndash;&gt;-->
+
+<!--    </section>-->
+<!--    &lt;!&ndash;Section: Content&ndash;&gt;-->
+
+
+<!--  </div>-->
+
+
+
+<div class="container-fluid mt-3 mb-5">
+
+  <!-- Section: Block Content -->
+  <section class="mb-4">
+
+    <style>
+      .map-container {
+        overflow: hidden;
+        position: relative;
+        height: 0;
+      }
+
+      .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    </style>
+
+    <div class="card">
+
+      <div class="row" style="margin:15px;">
+        <div class="col-md-6">
+
+          <!-- Google Maps -->
+          <div id="map-within-card-2" class="map-container rounded-left" style="height: 400px">
+            <iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=SPJ%20Group,%20CSK%20Arcade,%20Paika,%20Nera%20CSK%20Jewellery+(SPJ%20GROUP)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0"
+              style="border:0" allowfullscreen></iframe>
+          </div>
+          <!-- Google Maps -->
+
+        </div>
+
+        <div class="col-10 col-md-4 mx-auto align-self-center py-4">
+
+
+          <h5 class="font-weight-normal mb-4" style="font-size:45px"><span style="color: #f82860; font-family:impact;">S</span>
+<span style="color: #fcb401; font-family:impact;">P</span>
+<span style="color: #19c0ff; font-family:impact;">J</span><span style="color: black; font-family:script mt;" >&nbsp&nbsp Group</span></h5>
+<!--            <h5 class="font-weight-bold grey-text text-uppercase small">CSK Arcade,Paika</h5>-->
+
+          <p class="font-weight-bold grey-text text-uppercase small" style="font-size: 18px">CSK Arcade,Paika <br> </p>
+          <p class="font-weight-bold grey-text  small" style="font-size: 18px">Kottayam, Kerala<br>Pin: 686577</p>
+           <a href="tel:+919778777025"  class="font-weight-bold grey-text  small" style="font-size: 18px">Phone: +91 977877&nbsp7025</a><br>
+            <a href="tel:+9104822237025"  class="font-weight-bold grey-text  small" style="font-size: 18px">Tel &nbsp&nbsp&nbsp: +91 0482223&nbsp7025</a><br>
+            <a href="mailto:spjgroupktm@gmail.com"  class="font-weight-bold grey-text  small" style="font-size: 18px">Email: spjgroupktm@gmail.com</a><br>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Section: Block Content -->
+
+</div>
+
+{% include 'footer.html' %}

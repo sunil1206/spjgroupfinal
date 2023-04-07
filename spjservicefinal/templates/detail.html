@@ -1,0 +1,204 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% load static %}
+{% block metadescription %}
+
+     {{service_.description|truncatewords:155 }}
+
+
+{% endblock %}
+
+{% block title %}
+    {% if category %}
+        {{service_.name}} -SPJ SERVICE
+
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-- <section class="inner_page_head">-->
+<!--         <div class="container_fuild">-->
+<!--            <div class="row">-->
+<!--               <div class="col-md-12">-->
+<!--                  <div class="full">-->
+
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </section>-->
+<!--      &lt;!&ndash; end inner page section &ndash;&gt;-->
+
+<!--&lt;!&ndash; arrival section &ndash;&gt;-->
+<!--      <section class="arrival_section">-->
+<!--         <div class="container">-->
+<!--            <div class="box">-->
+<!--               <div class="arrival_bg_box">-->
+<!--                  <img src="{{service_.detail_img1.url}}" style="margin-top:92px;" alt="">-->
+<!--               </div>-->
+<!--               <div class="row">-->
+<!--                  <div class="col-md-6 ml-auto">-->
+<!--                     <div class="heading_container remove_line_bt">-->
+<!--                        <h2>-->
+<!--                           {{service_.desc}}-->
+<!--                        </h2>-->
+<!--                     </div>-->
+<!--                     <p style="margin-top: 20px;margin-bottom: 30px;">-->
+<!--                        {{service_.detail}}-->
+<!--                     </p>-->
+<!--                       <div class="read_bt1"><a href="{% url 'services' %}">Back</a></div>-->
+
+
+
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </section>-->
+
+
+
+
+
+
+<!--{% endblock %}-->
+
+
+<!--<style>-->
+
+<!--    .arrival_section .heading_container {-->
+<!--  color: #002c3e;-->
+<!--  margin-bottom: 10px;-->
+<!--}-->
+
+<!--.arrival_section .box {-->
+<!--  padding: 120px 45px;-->
+<!--  position: relative;-->
+<!--}-->
+
+<!--.arrival_section .arrival_bg_box {-->
+<!--    position: absolute;-->
+<!--    top: 0;-->
+<!--    left: 0;-->
+<!--    width: 100%;-->
+<!--    height: 100%;-->
+<!--    z-index: 3;-->
+<!--}-->
+
+<!--.arrival_section .arrival_bg_box img {-->
+<!--    width: 450px;-->
+<!--    height: 370px;-->
+<!--    -o-object-fit: cover;-->
+<!--    object-fit: cover;-->
+<!--    -o-object-position: top left;-->
+<!--    object-position: top left;-->
+<!--}-->
+
+<!--.arrival_section a {-->
+<!--  display: inline-block;-->
+<!--  padding: 10px 45px;-->
+<!--  background-color: #f7444e;-->
+<!--  border: 1px solid #f7444e;-->
+<!--  color: #ffffff;-->
+<!--  border-radius: 0;-->
+<!--  -webkit-transition: all 0.3s;-->
+<!--  transition: all 0.3s;-->
+<!--}-->
+
+<!--.arrival_section a:hover {-->
+<!--  background-color: transparent;-->
+<!--  color: #f7444e;-->
+<!--}-->
+<!--</style>-->
+
+
+
+
+<div class="container mt-5">
+
+
+  <!--Section: Content-->
+  <section class="mb-5" style="margin-top:184px;">
+
+    <!-- Section heading -->
+    <h3 class="text-center font-weight-bold mb-5">{{service_.desc}}</h3>
+
+  	<div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-12">
+        <!--News card-->
+        <div class="card">
+          <div class="card-body">
+            <div class="row h-100 d-flex align-items-center">
+              <div class="col-lg-6">
+                <p class="text-muted font-weight-light ml-3 mb-5">{{service_.detail}}
+                </p>
+<!--                <ul class="fa-ul mb-5 text-muted font-weight-light">-->
+<!--                  <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span>Built in GPS</li>-->
+<!--                  <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span>Heart Rate Sensor</li>-->
+<!--                  <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span>Water Resistant 50 Meters</li>-->
+<!--                  <li class="mb-2"><span class="fa-li"><i class="fas fa-check green-text"></i></span>Comprehensive Workout App</li>-->
+<!--                </ul>-->
+                <div class="d-flex justify-content-between ml-3">
+                    <a class="btn btn-primary" href="{% url 'services' %}" role="button">Back</a>
+                  <div class="text-center">
+                    <h4 class="mb-0"></h4>
+                  	<small class="grey-text"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+
+                <!--Carousel Wrapper-->
+                <div id="carousel-thumb" class="carousel slide carousel-thumbnails" data-ride="carousel">
+
+                  <!--Slides-->
+                  <div class="carousel-inner text-center text-md-left" role="listbox">
+                    <div class="carousel-item active">
+                      <img src="{{service_.detail_img1.url}}" alt="First slide" class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{service_.detail_img2.url}}" alt="Second slide" class="img-fluid">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{service_.img.url}}" alt="Third slide" class="img-fluid">
+                    </div>
+                  </div>
+                  <!--/.Slides-->
+
+                  <!--Thumbnails-->
+                  <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Back</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                  <!--/.Thumbnails-->
+
+                </div>
+                <!--/.Carousel Wrapper-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Grid column-->
+
+    </div>
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+<script>
+    $('.carousel').carousel({
+	interval: 2000
+})
+</script>
+
+{% include 'footer.html' %}

@@ -1,0 +1,137 @@
+<!--&lt;!&ndash; Navbar &ndash;&gt;-->
+<!--<nav class="navbar navbar-expand-lg navbar-scroll fixed-top shadow-0 border-bottom border-dark">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand" href="#!"><i class="fab fa-mdb fa-4x"></i></a>-->
+<!--    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"-->
+<!--      data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"-->
+<!--      aria-label="Toggle navigation">-->
+<!--      <i class="fas fa-bars"></i>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav ms-auto">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'index' %}">Home</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'services' %}">Services</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'about' %}">About</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'apply' %}">Request Card</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'contact' %}">Contact</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="{% url 'active_card' %}">Status</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a href="https://api.whatsapp.com/send?phone=+919778777025&text=Hello,%20I%20have%20a%20question%20about%20your%20dought.">Send message on WhatsApp<br>call us 977877025</a>-->
+
+
+<!--&lt;!&ndash;          <a href="{% url 'apply' %}">Call Us : +91 9656724429</a>&ndash;&gt;-->
+<!--        </li>-->
+<!--        <button type="button" class="btn btn-dark ms-3">Get Started</button>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<!--&lt;!&ndash; Navbar &ndash;&gt;-->
+
+<!--<style>-->
+<!--/* Color of the links BEFORE scroll */-->
+<!--.navbar-scroll .nav-link,-->
+<!--.navbar-scroll .navbar-toggler-icon,-->
+<!--.navbar-scroll .navbar-brand {-->
+<!--  color: #262626;-->
+<!--}-->
+
+<!--/* Color of the navbar BEFORE scroll */-->
+<!--.navbar-scroll {-->
+<!--  background-color: #FFC017;-->
+<!--}-->
+
+<!--/* Color of the links AFTER scroll */-->
+<!--.navbar-scrolled .nav-link,-->
+<!--.navbar-scrolled .navbar-toggler-icon,-->
+<!--.navbar-scroll .navbar-brand {-->
+<!--  color: #262626;-->
+<!--}-->
+
+<!--/* Color of the navbar AFTER scroll */-->
+<!--.navbar-scrolled {-->
+<!--  background-color: #fff;-->
+<!--}-->
+
+<!--/* An optional height of the navbar AFTER scroll */-->
+<!--.navbar.navbar-scroll.navbar-scrolled {-->
+<!--  padding-top: auto;-->
+<!--  padding-bottom: auto;-->
+<!--}-->
+<!--.navbar-brand {-->
+<!--  font-size: unset;-->
+<!--  height: 3.5rem;-->
+<!--}-->
+
+<!--</style>-->
+
+
+{% load static %}
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark info-color" style="height: 70px;
+   background: linear-gradient(0deg, rgba(255,204,51,1) 0%, rgba(255,255,102,1) 100%);background: rgb(254 225 0)">
+  <div class="logo" style="width:15%" ><a href="index.html"><img src="{% static 'images/SPJ Logo PNG.png' %}" style="height:70px;"></a></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+<!--        #6e4801-->
+        <a class="nav-link" style="color:#f82860;font-size: 18px;" href="{% url 'index' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:#f82860;font-size: 18px;"  href="{% url 'services' %}">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:#f82860;font-size: 18px;"  href="{% url 'about' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:#f82860;font-size: 18px;"  href="{% url 'apply' %}">Request Card</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:#f82860;font-size: 18px;"  href="{% url 'contact' %}">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="font-size: 18px;color:#f82860"  href="{% url 'active_card' %}">Card Status</a>
+      </li>
+
+
+      <li class="nav-item dropdown" style="color:#f82860;font-size: 18px;" >
+        <a class="nav-link dropdown-toggle" style="color:#f82860;font-size: 20px;"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Dropdown
+        </a>
+        <div class="dropdown-menu dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a>
+<!--          <a class="dropdown-item" href="{% url 'associate' %}">Associates</a>-->
+
+        </div>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" style="font-size: 19px;color:green"  href="tel:91 9778777025"><b>+91 9778777025</b></a>
+      </li>
+
+    </ul>
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+    </form>
+  </div>
+</nav>
+<style>
+
+</style>

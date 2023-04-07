@@ -1,0 +1,45 @@
+{% load static %}
+
+
+<div class="banner_section layout_padding" >
+         <div class="container">
+
+            <div id="costum_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+
+                  <div class="carousel-item active">
+
+                     <h1 class="furniture_text">{{i.name}}<p>
+    <span style="color: ;">S</span>
+    <span style="color: blue;">P</span>
+    <span style="color: green;">J</span> RIGHT CARD
+</p></h1>
+                     <p class="there_text">SPJ ഫാമിലി മെമ്പർഷിപ്പ് രജിസ്ട്രേഷൻ ഫീസായ  83.25*12= Rs.999/-  രൂപ മാസത്തേക്കായി മുഴുവൻ തുകയും കമ്പനിയിൽ അടച്ച്  SPJ റൈറ്റ്സ് കാർഡ്  കൈപറ്റിയിട്ടുള്ളവർക്ക് മാത്രമേ  മേൽ പറഞ്ഞിരിക്കുന്ന സേവനങ്ങളും ആനുകൂല്യങ്ങളും ലഭിക്കുകയുള്ളൂ.</p>
+
+                     <div class="contact_bt_main">
+                        <div class="contact_bt"><a href="{% url 'contact' %}">Contact Us</a></div>
+                     </div>
+
+                  </div>
+
+{% for i in result3 %}
+                  <div class="carousel-item">
+                     <h1 class="furniture_text">{{ i.name }}</h1>
+                     <p class="there_text">{{ i.desc }}</p>
+                     <div class="contact_bt_main">
+                        <div class="contact_bt"><a href="{% url 'contact' %}">Contact Us</a></div>
+                     </div>
+                  </div>
+                  {% endfor %}
+               </div>
+               <a class="carousel-control-prev" href="#costum_slider" role="button" data-slide="prev">
+               <i class=""><img src="{% static 'images/left-arrow.png' %}"></i>
+               </a>
+               <a class="carousel-control-next" href="#costum_slider" role="button" data-slide="next">
+               <i class=""><img src="{% static 'images/right-arrow.png' %}"></i>
+               </a>
+
+            </div>
+         </div>
+      </div>
+      <!-- banner section end -->

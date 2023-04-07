@@ -1,0 +1,214 @@
+{% load static %}
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% block title %}
+    {% if category %}
+        {{gallery_.name}} -SPJ SERVICE
+
+    {% endif %}
+{% endblock %}
+
+<div class="container my-5">
+
+  <!-- Section -->
+  <section>
+
+    <style>
+      .md-pills .nav-link.active {
+        color: #fff;
+        background-color: #616161;
+      }
+      button.close {
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        padding-right: 1rem;
+        padding-top: .6rem;
+      }
+    </style>
+
+<!--    &lt;!&ndash; Modal &ndash;&gt;-->
+<!--		<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">-->
+<!--				<div class="modal-content">-->
+<!--					<div class="modal-body p-0">-->
+<!--						<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--							<span aria-hidden="true">&times;</span>-->
+<!--						</button>-->
+
+<!--						&lt;!&ndash; Grid row &ndash;&gt;-->
+<!--						<div class="row">-->
+
+<!--							&lt;!&ndash; Grid column &ndash;&gt;-->
+<!--							<div class="col-md-6 py-5 pl-5">-->
+
+
+
+<!--								<p class="text-muted">{{gallery_.title}}</p>-->
+
+
+<!--							</div>-->
+<!--							&lt;!&ndash; Grid column &ndash;&gt;-->
+
+<!--							&lt;!&ndash; Grid column &ndash;&gt;-->
+<!--							<div class="col-md-6">-->
+
+<!--								<div class="view rounded-right">-->
+<!--									<img class="img-fluid" src="{{gallery_.image.url}}" alt="Sample image">-->
+<!--								</div>-->
+
+<!--							</div>-->
+<!--							&lt;!&ndash; Grid column &ndash;&gt;-->
+
+<!--						</div>-->
+<!--						&lt;!&ndash; Grid row &ndash;&gt;-->
+
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+
+    <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4"></h6>
+    <h1 class="font-weight-bold text-center dark-grey-text pb-2" style="margin-top: 150px;"><span style="color: #f82860; font-family:impact;">ABOUT</span>
+<span style="color: #19c0ff; font-family:impact;">US</span> </h1>
+
+
+
+    <hr class="w-header my-4">
+    <p class="lead text-center text-muted pt-2 mb-5"> </p>
+
+    <!--First row-->
+    <div class="row">
+
+      <!--First column-->
+      <div class="col-12">
+
+        <!-- Nav tabs -->
+        <ul class="nav md-pills flex-center flex-wrap mx-0" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold text-uppercase" data-toggle="tab" href="#panel31" role="tab">SPJ Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold text-uppercase" data-toggle="tab" href="#panel32" role="tab">SPJ Foundation</a>
+          </li>
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link font-weight-bold text-uppercase" data-toggle="tab" href="#panel33" role="tab">SPJ Foundation</a>-->
+<!--          </li>-->
+        </ul>
+
+      </div>
+      <!--First column-->
+
+    </div>
+    <!--First row-->
+
+    <!--Tab panels-->
+    <div class="tab-content mb-5">
+
+      <!--Panel 1-->
+      <div class="tab-pane fade show in active" id="panel31" role="tabpanel">
+
+        <!-- Grid row -->
+        <div class="row">
+{% for i in page_obj %}
+          <!-- Grid column -->
+          <div class="col-md-12 col-lg-4">
+
+            <!-- Card -->
+            <a class="card hoverable mb-4" style="margin-top: 26px;" data-toggle="modal" data-target="#basicExampleModal">
+
+              <!-- Card image -->
+              <img alt="Card image cap" class="img-fluid z-depth-1 rounded" src="{{i.image.url}}" style="height: 300;" >
+
+<!--              &lt;!&ndash; Card content &ndash;&gt;-->
+<!--              <div class="card-body">-->
+
+<!--                <h5 class="my-3">Phone Bag</h5>-->
+<!--                <p class="card-text text-uppercase mb-3">Bag, Box</p>-->
+
+<!--              </div>-->
+
+            </a>
+          </div>
+            {% endfor %}
+          <!-- Grid column -->
+
+
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!--Panel 1-->
+
+      <!--Panel 2-->
+      <div class="tab-pane fade" id="panel32" role="tabpanel">
+
+        <!-- Grid row -->
+        <div class="row" style="margin-top: 25px">
+{% for i in page_foun %}
+          <!-- Grid column -->
+          <div class="col-md-12 col-lg-4">
+
+            <!-- Card -->
+            <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
+
+              <!-- Card image -->
+              <img class="img-fluid z-depth-1 rounded" src="{{i.image.url}}" alt="Card image cap">
+
+              <!-- Card content -->
+
+
+            </a>
+            <!-- Card -->
+
+          </div>
+            {% endfor %}
+            <!--Panel 3-->
+
+
+
+
+  </section>
+</div>
+<!--   Section -->
+ <div class="mx-auto">
+        {% if page_obj.paginator.num_pages > 1 %}
+
+        <hr>
+        <div class="text-center">
+            {% for pg in page_obj.paginator.page_range %}
+                <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+        {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="mx-auto">
+        {% if page_foun.paginator2.num_pages > 1 %}
+
+        <hr>
+        <div class="text-center">
+            {% for pg in page_foun.paginator2.page_range %}
+                <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+        {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+  $(function () {
+  var selectedClass = "";
+  $(".filter").click(function () {
+    selectedClass = $(this).attr("data-rel");
+    $("#gallery").fadeTo(100, 0.1);
+    $("#gallery div").not("." + selectedClass).fadeOut().removeClass('animation');
+    setTimeout(function () {
+      $("." + selectedClass).fadeIn().addClass('animation');
+      $("#gallery").fadeTo(300, 1);
+    }, 300);
+  });
+});
+</style>

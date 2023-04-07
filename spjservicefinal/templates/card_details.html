@@ -1,0 +1,20 @@
+{% load static %}
+
+{% block content %}
+    <h1>Enter card number</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="card_number">Card number:</label>
+        <input type="text" name="cardno" id="card_number">
+        <input type="submit" value="Submit">
+    </form>
+    {% if card %}
+        <h2>Card details</h2>
+        <p>Card number: {{ card.cardno }}</p>
+        <p>Owner name: {{ card.name }}</p>
+        <p>Expiration date: {{ card.expiredate}}</p>
+    {% endif %}
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+{% endblock %}
